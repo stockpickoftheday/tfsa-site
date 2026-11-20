@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TFSA Calculator: What Is a TFSA and How Much Room Do You Have?</title>
+<meta name="description" content="Free TFSA calculator for Canadians: enter your date of birth to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold.">
+<link rel="canonical" href="https://tfsa-test.stockpickoftheday.com/">
+<meta property="og:title" content="TFSA Calculator: What Is a TFSA and How Much Room Do You Have?">
+<meta property="og:description" content="Free TFSA calculator for Canadians: enter your date of birth to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tfsa-test.stockpickoftheday.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "TFSA Calculator: What Is a TFSA and How Much Room Do You Have?",
+  "url": "https://tfsa-test.stockpickoftheday.com/",
+  "description": "Free TFSA calculator for Canadians: enter your date of birth to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a TFSA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A TFSA is a Tax-Free Savings Account: a registered account where your money grows tax-free and comes out tax-free. You can hold cash, GICs, stocks, ETFs, bonds and mutual funds inside one. Contributions are not tax-deductible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the TFSA contribution limit for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The TFSA contribution limit for 2026 is $7,000. Your total room is bigger than that if you have unused room from earlier years: someone eligible since 2009 who never contributed has $109,000 of room in 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find my exact TFSA contribution room?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check CRA My Account \u2014 it shows the room the CRA has on file for you. This calculator shows your maximum room if you have never contributed; subtract what you have put in and add back what you withdrew in earlier years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do TFSA withdrawals count as income?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Withdrawals are tax-free and do not count as income. They also do not affect federal income-tested benefits like Old Age Security or the Guaranteed Income Supplement. The amount you withdraw comes back as new room on January 1 of the next year."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="style.css">
+<script src="calculator.js" defer></script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <p class="site-title"><a href="index.html">TFSA Guide</a></p>
+    <p class="tagline">A TFSA guide for Canadians. No sign-up, no sales pitch.</p>
+    <nav class="main" aria-label="Main navigation">
+      <a href="index.html" class="current">Calculator</a>
+      <a href="what-can-you-hold-in-a-tfsa.html">What You Can Hold</a>
+      <a href="tfsa-rules.html">Rules</a>
+      <a href="tfsa-is-not-a-savings-account.html">Not a Savings Account</a>
+      <a href="how-many-tfsas-can-you-have.html">How Many TFSAs?</a>
+      <a href="tfsa-vs-rrsp.html">TFSA vs RRSP</a>
+      <a href="how-to-open-a-tfsa.html">How to Open One</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="ad-slot" data-ad-slot="leaderboard"><!-- AdSense code goes here when approved --></div>
+<main>
+  <div class="wrap">
+
+    <section class="hero">
+      <p class="eyebrow">Canada &middot; Based on Canada Revenue Agency rules</p>
+      <h1>TFSA Calculator: What Is a TFSA and How Much Room Do You Have?</h1>
+      <p class="lede">A TFSA (Tax-Free Savings Account) is a registered account where your money grows tax-free and comes out tax-free. It is not just a savings account &mdash; you can hold stocks, ETFs, bonds, GICs and mutual funds inside one. Enter your date of birth below to find your total TFSA contribution room.</p>
+      <ul class="chips">
+        <li>&#10003; No sign-up</li>
+        <li>&#10003; Nothing leaves your browser</li>
+        <li>&#10003; Your maximum room, year by year</li>
+      </ul>
+    </section>
+
+    <section class="origin">
+      <h2>Where the TFSA came from</h2>
+      <p>Finance Minister Jim Flaherty introduced the Tax-Free Savings Account in the 2008 federal budget, tabled on February 26, 2008. It came into effect on January 1, 2009, starting with a $5,000 yearly limit. The idea was a flexible account for any purpose &mdash; the Canada Revenue Agency calls it &ldquo;an RRSP for everything else in your life&rdquo; &mdash; where money grows tax-free and withdrawals are never taxed.</p>
+    </section>
+
+    <div class="calc-layout">
+      <div class="calc-box">
+        <h2>Find your TFSA contribution room</h2>
+        <p class="sub">Your room builds up every year from the year you turn 18, as long as you live in Canada. It does not matter if you have never opened a TFSA.</p>
+        <div class="field">
+          <label for="dob">Your date of birth</label>
+          <input type="date" id="dob" min="1900-01-01" max="2026-12-31">
+          <span class="hint">We only use it to work out the year you turned 18. Nothing you type leaves your browser.</span>
+        </div>
+        <p><button class="example-btn" id="calc-btn" type="button">Work out my room</button>
+        <button class="example-btn" id="example-btn" type="button">Try an example: born in 1990</button></p>
+        <div id="calc-error" class="no-result" hidden></div>
+      </div>
+      <div class="results-col">
+        <div class="results" id="results" hidden>
+          <p class="big-label">Your maximum TFSA room in 2026</p>
+          <p class="big" id="room-total">$0</p>
+          <p class="big-sub" id="room-sub"></p>
+          <dl id="room-rows"></dl>
+          <h3>Year by year</h3>
+          <div class="table-scroll"><table id="room-table">
+            <thead><tr><th>Year</th><th class="num">Limit that year</th><th class="num">Room built up</th></tr></thead>
+            <tbody></tbody>
+          </table></div>
+          <p class="note"><strong>This is your maximum room if you have never contributed.</strong> If you have put money in before, subtract what you contributed. If you took money out in an earlier year, add it back. Your exact personal room is in CRA My Account.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sticky-bar" id="sticky-bar" hidden><span>Your maximum room</span><strong id="sticky-total">$0</strong></div>
+
+    <section class="stats">
+      <h2>How many Canadians have a TFSA &mdash; and how much is in them?</h2>
+      <p>These are the latest published figures, from the Canada Revenue Agency&rsquo;s TFSA statistics for the 2024 tax year (data as of January 12, 2026). They count people who hold a TFSA, not every Canadian.</p>
+      <div class="example">
+        <h3>The big picture, 2024</h3>
+        <dl>
+          <dt>Canadians who held a TFSA</dt><dd>19,322,830</dd>
+          <dt>TFSA accounts open</dt><dd>32,061,460 (about 1.7 per holder)</dd>
+          <dt>Total value held in TFSAs</dt><dd>$745.2 billion</dd>
+          <dt>Average amount per holder</dt><dd>$38,566</dd>
+          <dt>Average unused room per holder</dt><dd>$52,735</dd>
+          <dt>Holders who put money in during 2024</dt><dd>57%</dd>
+          <dt>Holders who used all their room</dt><dd>9%</dd>
+        </dl>
+      </div>
+      <p><strong>How many adults do not have one?</strong> About 58 in 100 Canadian adults held a TFSA in 2024 &mdash; so about 42 in 100 adults did not. That is our approximate calculation from the CRA&rsquo;s holder count and Statistics Canada&rsquo;s July 1, 2024 population estimates.</p>
+      <h3>Average TFSA amount by age group, 2024</h3>
+      <p>The average grows with every age group. These are averages per holder &mdash; they include only people who have a TFSA, and a few large accounts pull the average up.</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Age group</th><th class="num">Holders</th><th class="num">Average amount</th></tr></thead>
+        <tbody>
+      <tr><td>Under 20</td><td class="num">164,910</td><td class="num">$4,179</td></tr>
+      <tr><td>20 to 24</td><td class="num">1,027,480</td><td class="num">$8,652</td></tr>
+      <tr><td>25 to 29</td><td class="num">1,600,020</td><td class="num">$13,967</td></tr>
+      <tr><td>30 to 34</td><td class="num">1,861,290</td><td class="num">$18,475</td></tr>
+      <tr><td>35 to 39</td><td class="num">1,766,240</td><td class="num">$21,561</td></tr>
+      <tr><td>40 to 44</td><td class="num">1,614,100</td><td class="num">$24,061</td></tr>
+      <tr><td>45 to 49</td><td class="num">1,429,870</td><td class="num">$28,084</td></tr>
+      <tr><td>50 to 54</td><td class="num">1,378,160</td><td class="num">$35,235</td></tr>
+      <tr><td>55 to 59</td><td class="num">1,432,000</td><td class="num">$43,519</td></tr>
+      <tr><td>60 to 64</td><td class="num">1,653,090</td><td class="num">$52,381</td></tr>
+      <tr><td>65 to 69</td><td class="num">1,574,020</td><td class="num">$59,344</td></tr>
+      <tr><td>70 to 74</td><td class="num">1,332,820</td><td class="num">$64,972</td></tr>
+      <tr><td>75 to 79</td><td class="num">1,068,420</td><td class="num">$71,094</td></tr>
+      <tr><td>80 and over</td><td class="num">1,420,420</td><td class="num">$76,305</td></tr>
+          <tr><td><strong>All holders</strong></td><td class="num"><strong>19,322,830</strong></td><td class="num"><strong>$38,566</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p class="note"><strong>Source:</strong> Canada Revenue Agency, Tax-Free Savings Account statistics, 2024 tax year, Tables 1A and 3A. Averages are fair market value per holder on December 31, 2024.</p>
+    </section>
+
+    <section>
+      <h2>TFSA contribution limit by year, 2009 to 2026</h2>
+      <p>The TFSA limit 2026 is $7,000, unchanged from 2024 and 2025. Someone who was 18 or older and a resident of Canada every year since 2009, and never contributed, has $109,000 of total room in 2026. The 2027 limit has not been published yet.</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Year</th><th class="num">Limit that year</th><th class="num">Room built up</th></tr></thead>
+        <tbody>
+      <tr><td>2009</td><td class="num">$5,000</td><td class="num">$5,000</td></tr>
+      <tr><td>2010</td><td class="num">$5,000</td><td class="num">$10,000</td></tr>
+      <tr><td>2011</td><td class="num">$5,000</td><td class="num">$15,000</td></tr>
+      <tr><td>2012</td><td class="num">$5,000</td><td class="num">$20,000</td></tr>
+      <tr><td>2013</td><td class="num">$5,500</td><td class="num">$25,500</td></tr>
+      <tr><td>2014</td><td class="num">$5,500</td><td class="num">$31,000</td></tr>
+      <tr><td>2015</td><td class="num">$10,000</td><td class="num">$41,000</td></tr>
+      <tr><td>2016</td><td class="num">$5,500</td><td class="num">$46,500</td></tr>
+      <tr><td>2017</td><td class="num">$5,500</td><td class="num">$52,000</td></tr>
+      <tr><td>2018</td><td class="num">$5,500</td><td class="num">$57,500</td></tr>
+      <tr><td>2019</td><td class="num">$6,000</td><td class="num">$63,500</td></tr>
+      <tr><td>2020</td><td class="num">$6,000</td><td class="num">$69,500</td></tr>
+      <tr><td>2021</td><td class="num">$6,000</td><td class="num">$75,500</td></tr>
+      <tr><td>2022</td><td class="num">$6,000</td><td class="num">$81,500</td></tr>
+      <tr><td>2023</td><td class="num">$6,500</td><td class="num">$88,000</td></tr>
+      <tr><td>2024</td><td class="num">$7,000</td><td class="num">$95,000</td></tr>
+      <tr><td>2025</td><td class="num">$7,000</td><td class="num">$102,000</td></tr>
+      <tr><td>2026</td><td class="num">$7,000</td><td class="num">$109,000</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Source:</strong> Canada Revenue Agency, MP, DB, RRSP, DPSP, ALDA, TFSA limits, YMPE and the YAMPE (page dated October 28, 2026).</p>
+    </section>
+
+    <section>
+      <h2>Start here</h2>
+      <ul>
+        <li><a href="what-can-you-hold-in-a-tfsa.html">What can you hold in a TFSA?</a> &mdash; cash, GICs, stocks, ETFs, bonds and more, each in one line.</li>
+        <li><a href="tfsa-rules.html">The TFSA rules, made easy</a> &mdash; who qualifies, withdrawals, and the 1% over-contribution penalty.</li>
+        <li><a href="tfsa-is-not-a-savings-account.html">A TFSA is not a savings account</a> &mdash; the mix-up that costs Canadians money.</li>
+        <li><a href="how-many-tfsas-can-you-have.html">How many TFSAs can you have?</a> &mdash; as many as you like, but one shared limit.</li>
+        <li><a href="tfsa-vs-rrsp.html">TFSA vs RRSP</a> &mdash; the benefits of a TFSA over an RRSP.</li>
+        <li><a href="how-to-open-a-tfsa.html">How to open a TFSA</a> &mdash; as easy as setting up a chequing account.</li>
+      </ul>
+    </section>
+
+    <section class="faq">
+      <h2>Common questions</h2>
+      <h3>What is a TFSA?</h3>
+      <p>A TFSA is a Tax-Free Savings Account: a registered account where your money grows tax-free and comes out tax-free. You can hold cash, GICs, stocks, ETFs, bonds and mutual funds inside one. Contributions are not tax-deductible.</p>
+      <h3>What is the TFSA contribution limit for 2026?</h3>
+      <p>The TFSA contribution limit for 2026 is $7,000. Your total room is bigger than that if you have unused room from earlier years: someone eligible since 2009 who never contributed has $109,000 of room in 2026.</p>
+      <h3>How do I find my exact TFSA contribution room?</h3>
+      <p>Check CRA My Account — it shows the room the CRA has on file for you. This calculator shows your maximum room if you have never contributed; subtract what you have put in and add back what you withdrew in earlier years.</p>
+      <h3>Do TFSA withdrawals count as income?</h3>
+      <p>No. Withdrawals are tax-free and do not count as income. They also do not affect federal income-tested benefits like Old Age Security or the Guaranteed Income Supplement. The amount you withdraw comes back as new room on January 1 of the next year.</p>
+    </section>
+
+  </div>
+</main>
+<div class="ad-slot" data-ad-slot="footer"><!-- AdSense code goes here when approved --></div>
+<footer class="site">
+  <div class="wrap">
+    <nav aria-label="Footer navigation">
+      <a href="index.html">Calculator</a>
+      <a href="what-can-you-hold-in-a-tfsa.html">What You Can Hold</a>
+      <a href="tfsa-rules.html">Rules</a>
+      <a href="tfsa-is-not-a-savings-account.html">Not a Savings Account</a>
+      <a href="how-many-tfsas-can-you-have.html">How Many TFSAs?</a>
+      <a href="tfsa-vs-rrsp.html">TFSA vs RRSP</a>
+      <a href="how-to-open-a-tfsa.html">How to Open One</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <p>This site is for general information only. It is not financial advice. Tax rules change — check the Canada Revenue Agency (canada.ca) or talk to a licensed advisor before you make a decision about your own money.</p>
+    <p>&copy; 2026 TFSA Guide. All figures from the Canada Revenue Agency and Statistics Canada, checked November 19, 2026.</p>
+  </div>
+</footer>
+</body>
+</html>
