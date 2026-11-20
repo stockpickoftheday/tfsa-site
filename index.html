@@ -106,9 +106,13 @@
         <h2>Find your TFSA contribution room</h2>
         <p class="sub">Your room builds up every year from the year you turn 18, as long as you live in Canada. It does not matter if you have never opened a TFSA.</p>
         <div class="field">
-          <label for="dob">Your date of birth</label>
-          <input type="date" id="dob" min="1900-01-01" max="2026-12-31">
-          <span class="hint">We only use it to work out the year you turned 18. Nothing you type leaves your browser.</span>
+          <label>Your date of birth</label>
+          <div class="dob-fields">
+            <span><label for="dob-day">Day</label><input type="number" id="dob-day" min="1" max="31" placeholder="15" inputmode="numeric"></span>
+            <span><label for="dob-month">Month</label><select id="dob-month"><option value="">Month</option><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></span>
+            <span><label for="dob-year">Year</label><input type="number" id="dob-year" min="1900" max="2026" placeholder="1990" inputmode="numeric"></span>
+          </div>
+          <span class="hint">Just type your birth year &mdash; the year is what sets your room. Nothing you type leaves your browser.</span>
         </div>
         <p><button class="example-btn" id="calc-btn" type="button">Work out my room</button>
         <button class="example-btn" id="example-btn" type="button">Try an example: born in 1990</button></p>
@@ -120,11 +124,6 @@
           <p class="big" id="room-total">$0</p>
           <p class="big-sub" id="room-sub"></p>
           <dl id="room-rows"></dl>
-          <h3>Year by year</h3>
-          <div class="table-scroll"><table id="room-table">
-            <thead><tr><th>Year</th><th class="num">Limit that year</th><th class="num">Room built up</th></tr></thead>
-            <tbody></tbody>
-          </table></div>
           <p class="note"><strong>This is your maximum room if you have never contributed.</strong> If you have put money in before, subtract what you contributed. If you took money out in an earlier year, add it back. Your exact personal room is in CRA My Account.</p>
         </div>
       </div>

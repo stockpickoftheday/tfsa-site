@@ -58,37 +58,45 @@ function calculate(birthYear) {
     dl.appendChild(dt);
     dl.appendChild(dd);
   });
-  var tbody = document.querySelector("#room-table tbody");
-  tbody.innerHTML = "";
-  rows.forEach(function (r) {
-    var tr = document.createElement("tr");
-    tr.innerHTML = "<td>" + r.year + "</td><td class=\"num\">" + fmt(r.limit) +
-      "</td><td class=\"num\">" + fmt(r.cumulative) + "</td>";
-    tbody.appendChild(tr);
-  });
   document.getElementById("results").hidden = false;
   document.getElementById("sticky-bar").hidden = false;
 }
 
 function run() {
-  var dob = document.getElementById("dob").value;
-  if (!dob) {
-    showError("Please enter your date of birth first.");
+  var year = parseInt(document.getElementById("dob-year").value, 10);
+  var month = document.getElementById("dob-month").value;
+  var day = parseInt(document.getElementById("dob-day").value, 10);
+  if (isNaN(year) || year < 1900 || year > LAST_YEAR) {
+    showError("Please type your birth year (1900–2026).");
     return;
   }
-  var birthYear = parseInt(dob.slice(0, 4), 10);
-  if (isNaN(birthYear) || birthYear < 1900 || birthYear > LAST_YEAR) {
-    showError("Please enter a valid date of birth.");
+  if (!month) {
+    showError("Please pick your birth month.");
     return;
   }
-  calculate(birthYear);
+  if (isNaN(day) || day < 1 || day > 31) {
+    showError("Please type your birth day (1–31).");
+    return;
+  }
+  calculate(year);
+}
+
+function maybeRun() {
+  var year = document.getElementById("dob-year").value;
+  var month = document.getElementById("dob-month").value;
+  var day = document.getElementById("dob-day").value;
+  if (year && month && day) run();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("calc-btn").addEventListener("click", run);
   document.getElementById("example-btn").addEventListener("click", function () {
-    document.getElementById("dob").value = "1990-06-15";
+    document.getElementById("dob-day").value = "15";
+    document.getElementById("dob-month").value = "6";
+    document.getElementById("dob-year").value = "1990";
     calculate(1990);
   });
-  document.getElementById("dob").addEventListener("change", run);
+  ["dob-day", "dob-month", "dob-year"].forEach(function (id) {
+    document.getElementById(id).addEventListener("change", maybeRun);
+  });
 });
