@@ -279,6 +279,10 @@ button.example-btn {
 }
 button.example-btn:hover { background: #eef3f8; }
 
+.calc-actions { text-align: center; margin-top: 6px; }
+.calc-actions button { display: block; margin: 0 auto 12px; }
+.calc-actions button:last-child { margin-bottom: 0; }
+
 /* ---------- results (dark navy panel) ---------- */
 
 .results {
