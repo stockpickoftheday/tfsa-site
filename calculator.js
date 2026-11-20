@@ -63,19 +63,11 @@ function calculate(birthYear) {
 }
 
 function run() {
+  // Only the birth year sets your room — month and day do not change the
+  // number, so the button works as soon as a valid year is typed.
   var year = parseInt(document.getElementById("dob-year").value, 10);
-  var month = document.getElementById("dob-month").value;
-  var day = parseInt(document.getElementById("dob-day").value, 10);
   if (isNaN(year) || year < 1900 || year > LAST_YEAR) {
     showError("Please type your birth year (1900–2026).");
-    return;
-  }
-  if (!month) {
-    showError("Please pick your birth month.");
-    return;
-  }
-  if (isNaN(day) || day < 1 || day > 31) {
-    showError("Please type your birth day (1–31).");
     return;
   }
   calculate(year);
