@@ -2,7 +2,7 @@
 
 > A free guide for Canadians: what a TFSA is, how much room you have, what you can hold, and the rules — in plain words.
 
-- [TFSA Calculator: What Is a TFSA and How Much Room Do You Have?](https://tfsa-test.stockpickoftheday.com/)
+- [TFSA Contribution Limit Calculator: What Is a TFSA and How Much Room Do You Have?](https://tfsa-test.stockpickoftheday.com/)
 - [What Can You Hold in a TFSA?](https://tfsa-test.stockpickoftheday.com/what-can-you-hold-in-a-tfsa.html)
 - [TFSA Rules, Made Easy](https://tfsa-test.stockpickoftheday.com/tfsa-rules.html)
 - [A TFSA Is Not a Savings Account](https://tfsa-test.stockpickoftheday.com/tfsa-is-not-a-savings-account.html)
