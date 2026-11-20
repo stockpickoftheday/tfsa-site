@@ -2,13 +2,13 @@
 
 > A free guide for Canadians: what a TFSA is, how much room you have, what you can hold, and the rules — in plain words.
 
-- [TFSA Contribution Limit Calculator: What Is a TFSA and How Much Room Do You Have?](https://tfsa-test.stockpickoftheday.com/)
-- [What Can You Hold in a TFSA?](https://tfsa-test.stockpickoftheday.com/what-can-you-hold-in-a-tfsa.html)
-- [TFSA Rules, Made Easy](https://tfsa-test.stockpickoftheday.com/tfsa-rules.html)
-- [A TFSA Is Not a Savings Account](https://tfsa-test.stockpickoftheday.com/tfsa-is-not-a-savings-account.html)
-- [How Many TFSAs Can You Have?](https://tfsa-test.stockpickoftheday.com/how-many-tfsas-can-you-have.html)
-- [TFSA vs RRSP](https://tfsa-test.stockpickoftheday.com/tfsa-vs-rrsp.html)
-- [How to Open a TFSA](https://tfsa-test.stockpickoftheday.com/how-to-open-a-tfsa.html)
-- [About](https://tfsa-test.stockpickoftheday.com/about.html)
-- [Contact](https://tfsa-test.stockpickoftheday.com/contact.html)
-- [Privacy Policy](https://tfsa-test.stockpickoftheday.com/privacy.html)
+- [TFSA Contribution Limit Calculator: What Is a TFSA and How Much Room Do You Have?](https://tfsasimplified.ca/)
+- [What Can You Hold in a TFSA?](https://tfsasimplified.ca/what-can-you-hold-in-a-tfsa.html)
+- [TFSA Rules, Made Easy](https://tfsasimplified.ca/tfsa-rules.html)
+- [A TFSA Is Not a Savings Account](https://tfsasimplified.ca/tfsa-is-not-a-savings-account.html)
+- [How Many TFSAs Can You Have?](https://tfsasimplified.ca/how-many-tfsas-can-you-have.html)
+- [TFSA vs RRSP](https://tfsasimplified.ca/tfsa-vs-rrsp.html)
+- [How to Open a TFSA](https://tfsasimplified.ca/how-to-open-a-tfsa.html)
+- [About](https://tfsasimplified.ca/about.html)
+- [Contact](https://tfsasimplified.ca/contact.html)
+- [Privacy Policy](https://tfsasimplified.ca/privacy.html)
