@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tfsa-test.stockpickoftheday.com/sitemap.xml
