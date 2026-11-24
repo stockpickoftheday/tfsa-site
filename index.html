@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TFSA Contribution Limit Calculator: What Is a TFSA and How Much Room Do You Have?</title>
-<meta name="description" content="Free TFSA calculator for Canadians: enter your date of birth to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold.">
+<meta name="description" content="Free TFSA calculator for Canadians: enter your birth year to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold.">
 <link rel="canonical" href="https://tfsasimplified.ca/">
 <meta property="og:title" content="TFSA Contribution Limit Calculator: What Is a TFSA and How Much Room Do You Have?">
-<meta property="og:description" content="Free TFSA calculator for Canadians: enter your date of birth to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold.">
+<meta property="og:description" content="Free TFSA calculator for Canadians: enter your birth year to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://tfsasimplified.ca/">
 <meta property="og:image" content="https://tfsasimplified.ca/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TFSA Contribution Limit Calculator: What Is a TFSA and How Much Room Do You Have?">
-<meta name="twitter:description" content="Free TFSA calculator for Canadians: enter your date of birth to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold.">
+<meta name="twitter:description" content="Free TFSA calculator for Canadians: enter your birth year to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold.">
 <meta name="twitter:image" content="https://tfsasimplified.ca/og-image.png">
 <script type="application/ld+json">
 {
@@ -21,7 +21,7 @@
   "@type": "WebPage",
   "name": "TFSA Contribution Limit Calculator: What Is a TFSA and How Much Room Do You Have?",
   "url": "https://tfsasimplified.ca/",
-  "description": "Free TFSA calculator for Canadians: enter your date of birth to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold."
+  "description": "Free TFSA calculator for Canadians: enter your birth year to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold."
 }
 </script>
 <script type="application/ld+json">
@@ -69,7 +69,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "TFSA Contribution Limit Calculator: What Is a TFSA and How Much Room Do You Have?",
-  "description": "Free TFSA calculator for Canadians: enter your date of birth to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold.",
+  "description": "Free TFSA calculator for Canadians: enter your birth year to find your total TFSA contribution room, plus the 2026 limit, the rules, and what you can hold.",
   "url": "https://tfsasimplified.ca/",
   "mainEntityOfPage": "https://tfsasimplified.ca/"
 }
@@ -78,7 +78,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=4">
-<script src="calculator.js?v=3" defer></script>
+<script src="calculator.js?v=4" defer></script>
 </head>
 <body>
 <header class="site">
@@ -106,7 +106,7 @@
     <section class="hero">
       <p class="eyebrow">Canada &middot; Based on Canada Revenue Agency rules</p>
       <h1>What Is a TFSA and How Much Room Do You Have?</h1>
-      <p class="lede">A TFSA (Tax-Free Savings Account) is a registered account where your money grows tax-free and comes out tax-free. It is not just a savings account &mdash; you can hold stocks, ETFs, bonds, GICs and mutual funds inside one. Enter your date of birth below to find your total TFSA contribution room.</p>
+      <p class="lede">A TFSA (Tax-Free Savings Account) is a registered account where your money grows tax-free and comes out tax-free. It is not just a savings account &mdash; you can hold stocks, ETFs, bonds, GICs and mutual funds inside one. Enter your birth year below to find your total TFSA contribution room.</p>
       <ul class="chips">
         <li>&#10003; No sign-up</li>
         <li>&#10003; Nothing leaves your browser</li>
@@ -124,13 +124,14 @@
         <h2>Find your TFSA contribution room</h2>
         <p class="sub">Your room builds up every year from the year you turn 18, as long as you live in Canada. It does not matter if you have never opened a TFSA.</p>
         <div class="field">
-          <label>Your date of birth</label>
-          <div class="dob-fields">
-            <span><label for="dob-day">Day</label><input type="number" id="dob-day" min="1" max="31" placeholder="15" inputmode="numeric"></span>
-            <span><label for="dob-month">Month</label><select id="dob-month"><option value="">Month</option><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></span>
-            <span><label for="dob-year">Year</label><input type="number" id="dob-year" min="1900" max="2026" placeholder="1990" inputmode="numeric"></span>
-          </div>
-          <span class="hint">Just type your birth year &mdash; the year is what sets your room. Nothing you type leaves your browser.</span>
+          <label for="dob-year">Your birth year</label>
+          <input type="number" id="dob-year" min="1900" max="2026" placeholder="1990" inputmode="numeric">
+          <span class="hint">Only the year is needed &mdash; the year is what sets your room. Nothing you type leaves your browser.</span>
+        </div>
+        <div class="field">
+          <label for="residency-year">Year you became a Canadian resident (optional)</label>
+          <input type="number" id="residency-year" min="1900" max="2026" placeholder="e.g. 2015" inputmode="numeric">
+          <span class="hint">Only fill this in if you moved to Canada after turning 18. Your room starts building the year you became a resident with a valid SIN &mdash; not before. Leave it blank if you have lived in Canada since turning 18.</span>
         </div>
         <div class="calc-actions">
           <button class="cta-btn" id="calc-btn" type="button">Work out my room</button>
@@ -148,7 +149,43 @@
         </div>
       </div>
     </div>
-    <div class="sticky-bar" id="sticky-bar" hidden><span>Your maximum room</span><strong id="sticky-total">$0</strong></div>
+
+    <div class="calc-box growth-box">
+      <h2>How much could your TFSA grow?</h2>
+      <p class="sub">See what your savings could become over time. Change the numbers to match your plan.</p>
+      <div class="field-row">
+        <div class="field">
+          <label for="growth-start">Starting balance</label>
+          <span class="money-input"><span>$</span><input type="number" id="growth-start" min="0" max="10000000" placeholder="0" inputmode="decimal"></span>
+        </div>
+        <div class="field">
+          <label for="growth-monthly">Monthly contribution</label>
+          <span class="money-input"><span>$</span><input type="number" id="growth-monthly" min="0" max="100000" placeholder="500" inputmode="decimal"></span>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="growth-return">Annual return (%)</label>
+          <input type="number" id="growth-return" min="0" max="30" step="0.5" placeholder="6" inputmode="decimal">
+          <span class="hint">Enter as a number &mdash; 6 means 6% a year. A balanced portfolio has averaged about 6% a year over long periods, but returns vary and are never guaranteed.</span>
+        </div>
+        <div class="field">
+          <label for="growth-years">Years to grow</label>
+          <select id="growth-years"><option value="10">10 years</option><option value="20" selected>20 years</option><option value="30">30 years</option></select>
+        </div>
+      </div>
+      <div class="calc-actions">
+        <button class="cta-btn" id="growth-btn" type="button">Work out the growth</button>
+      </div>
+      <div id="growth-error" class="no-result" hidden></div>
+      <div class="results" id="growth-results" hidden>
+        <p class="big-label">Your TFSA could be worth</p>
+        <p class="big" id="growth-total">$0</p>
+        <p class="big-sub" id="growth-sub"></p>
+        <dl id="growth-rows"></dl>
+        <p class="note"><strong>This is an illustration, not a promise.</strong> Investment returns go up and down, and your TFSA could be worth less than you put in. These numbers assume your return stays the same every year, your monthly contribution never changes, and you pay no fees or tax.</p>
+      </div>
+    </div>
 
     <section>
       <div class="example">

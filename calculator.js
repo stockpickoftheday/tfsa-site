@@ -1,4 +1,4 @@
-// TFSA contribution-room calculator (tfsaguide.ca).
+// TFSA contribution-room calculator (tfsasimplified.ca).
 // Annual TFSA dollar limits, 2009-2026 (Canada Revenue Agency).
 // Runs entirely in the browser: nothing you type leaves your computer.
 var TFSA_LIMITS = {
@@ -14,17 +14,23 @@ function fmt(n) {
   return "$" + n.toLocaleString("en-CA");
 }
 
+function fmt0(n) {
+  return "$" + Math.round(n).toLocaleString("en-CA");
+}
+
 function showError(msg) {
   var err = document.getElementById("calc-error");
   err.textContent = msg;
   err.hidden = false;
   document.getElementById("results").hidden = true;
-  document.getElementById("sticky-bar").hidden = true;
 }
 
-function calculate(birthYear) {
+function calculate(birthYear, residencyYear) {
   var turn18 = birthYear + 18;
   var firstYear = Math.max(turn18, 2009);
+  // Room only starts building the year you became a resident with a valid
+  // SIN, so newcomers start later than the year they turned 18.
+  if (residencyYear) firstYear = Math.max(firstYear, residencyYear);
   if (firstYear > LAST_YEAR) {
     showError("You turn 18 in " + turn18 + ", so your TFSA room starts in " +
       firstYear + ". The TFSA limit for " + firstYear +
@@ -39,10 +45,10 @@ function calculate(birthYear) {
   }
   document.getElementById("calc-error").hidden = true;
   document.getElementById("room-total").textContent = fmt(total);
-  document.getElementById("sticky-total").textContent = fmt(total);
-  document.getElementById("room-sub").textContent =
-    "Born " + birthYear + " · turned 18 in " + turn18 +
+  var sub = "Born " + birthYear + " · turned 18 in " + turn18 +
     " · eligible from " + firstYear;
+  if (residencyYear) sub += " · resident since " + residencyYear;
+  document.getElementById("room-sub").textContent = sub;
   var dl = document.getElementById("room-rows");
   dl.innerHTML = "";
   var summary = [
@@ -59,7 +65,6 @@ function calculate(birthYear) {
     dl.appendChild(dd);
   });
   document.getElementById("results").hidden = false;
-  document.getElementById("sticky-bar").hidden = false;
 }
 
 function run() {
@@ -70,25 +75,101 @@ function run() {
     showError("Please type your birth year (1900–2026).");
     return;
   }
-  calculate(year);
+  var resVal = document.getElementById("residency-year").value;
+  var residencyYear = null;
+  if (resVal !== "") {
+    residencyYear = parseInt(resVal, 10);
+    if (isNaN(residencyYear) || residencyYear < 1900 || residencyYear > LAST_YEAR) {
+      showError("Please type the year you became a resident (1900–2026), or leave it blank.");
+      return;
+    }
+  }
+  calculate(year, residencyYear);
 }
 
 function maybeRun() {
+  // Auto-run once a full 4-digit birth year is typed.
   var year = document.getElementById("dob-year").value;
-  var month = document.getElementById("dob-month").value;
-  var day = document.getElementById("dob-day").value;
-  if (year && month && day) run();
+  if (/^\d{4}$/.test(year)) run();
+}
+
+// ---------- TFSA growth calculator ----------
+
+function growthRun(validate) {
+  var err = document.getElementById("growth-error");
+  var results = document.getElementById("growth-results");
+  var start = parseFloat(document.getElementById("growth-start").value) || 0;
+  var monthly = parseFloat(document.getElementById("growth-monthly").value) || 0;
+  var retRaw = document.getElementById("growth-return").value;
+  var years = parseInt(document.getElementById("growth-years").value, 10);
+  if (retRaw === "" || retRaw === null) {
+    // Nothing to work out yet — stay quiet until a return is typed.
+    err.hidden = true;
+    results.hidden = true;
+    return;
+  }
+  var ret = parseFloat(retRaw);
+  if (isNaN(ret) || ret < 0 || ret > 30 || start < 0 || monthly < 0) {
+    if (!validate) {
+      err.hidden = true;
+      results.hidden = true;
+      return;
+    }
+    err.textContent = "Please type an annual return between 0 and 30 (for example, 6 for 6% a year).";
+    err.hidden = false;
+    results.hidden = true;
+    return;
+  }
+  // Monthly compounding: contributions at the end of each month.
+  var r = ret / 100 / 12;
+  var n = years * 12;
+  var future;
+  if (r === 0) {
+    future = start + monthly * n;
+  } else {
+    var factor = Math.pow(1 + r, n);
+    future = start * factor + monthly * ((factor - 1) / r);
+  }
+  var contributed = start + monthly * n;
+  var growth = future - contributed;
+  err.hidden = true;
+  document.getElementById("growth-total").textContent = fmt0(future);
+  document.getElementById("growth-sub").textContent =
+    "After " + years + " years at " + ret + "% a year";
+  var dl = document.getElementById("growth-rows");
+  dl.innerHTML = "";
+  var rows = [
+    ["Total you put in", fmt0(contributed)],
+    ["Growth", fmt0(growth)],
+    ["Years", years]
+  ];
+  rows.forEach(function (pair) {
+    var dt = document.createElement("dt");
+    dt.textContent = pair[0];
+    var dd = document.createElement("dd");
+    dd.textContent = pair[1];
+    dl.appendChild(dt);
+    dl.appendChild(dd);
+  });
+  results.hidden = false;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("calc-btn").addEventListener("click", run);
   document.getElementById("example-btn").addEventListener("click", function () {
-    document.getElementById("dob-day").value = "15";
-    document.getElementById("dob-month").value = "6";
     document.getElementById("dob-year").value = "1990";
-    calculate(1990);
+    document.getElementById("residency-year").value = "";
+    calculate(1990, null);
   });
-  ["dob-day", "dob-month", "dob-year"].forEach(function (id) {
-    document.getElementById(id).addEventListener("change", maybeRun);
+  ["dob-year", "residency-year"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", maybeRun);
+  });
+  document.getElementById("growth-btn").addEventListener("click", function () {
+    growthRun(true);
+  });
+  ["growth-start", "growth-monthly", "growth-return", "growth-years"].forEach(function (id) {
+    var el = document.getElementById(id);
+    el.addEventListener("input", function () { growthRun(false); });
+    el.addEventListener("change", function () { growthRun(false); });
   });
 });

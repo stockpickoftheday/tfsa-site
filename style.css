@@ -279,6 +279,8 @@ button.example-btn {
 }
 button.example-btn:hover { background: #eef3f8; }
 
+.growth-box { margin-top: 24px; }
+
 .calc-actions { text-align: center; margin-top: 6px; }
 .calc-actions button { display: block; margin: 0 auto 12px; }
 .calc-actions button:last-child { margin-bottom: 0; }
@@ -360,26 +362,6 @@ button.example-btn:hover { background: #eef3f8; }
   margin-top: 18px;
 }
 .no-result p { color: #6d1a15; }
-
-/* ---------- sticky answer bar (mobile only) ---------- */
-
-.sticky-bar {
-  position: sticky;
-  bottom: 12px;
-  z-index: 30;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  margin-top: 16px;
-  background: var(--navy-900);
-  color: #fff;
-  border-radius: 999px;
-  box-shadow: 0 8px 24px rgba(12, 31, 51, 0.35);
-  padding: 13px 20px;
-}
-.sticky-bar span { font-size: 0.9rem; color: #9db8d0; font-weight: 600; }
-.sticky-bar strong { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap; color: #f5b81e; }
 
 /* ---------- tables ---------- */
 
@@ -478,8 +460,6 @@ footer.site p { margin: 0; }
 
   .calc-layout .results-col { position: sticky; top: 132px; }
 
-  .sticky-bar { display: none !important; }
-
   .field-row .field { flex-basis: 0; }
 }
 
@@ -543,11 +523,6 @@ footer.site p { margin: 0; }
 .faq p { margin-top: 0; }
 
 /* Date of birth as three plain fields so the year is just typed in */
-.dob-fields { display: flex; flex-wrap: wrap; gap: 12px; }
-.dob-fields span { display: flex; flex-direction: column; flex: 1 1 90px; }
-.dob-fields span:last-child { flex: 2 1 110px; }
-.dob-fields span label { font-size: 0.86rem; font-weight: 600; color: var(--muted); margin-bottom: 4px; }
-
 /* Phones: stack the big-picture stats so long values never run off the card */
 @media (max-width: 640px) {
   .calc-box { padding: 20px; }
